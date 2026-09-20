@@ -67,13 +67,11 @@ sudo /tmp/linux-crisis-tools.sh
 If `curl` is not installed:
 
 ```bash
-GITHUB_USER="<YOUR_GITHUB_USERNAME>"
-REPO="<YOUR_REPOSITORY_NAME>"
+curl -fsSL \
+  https://raw.githubusercontent.com/johnny-official/Linux-Crisis-Tools/refs/heads/main/linux-crisis-tools.sh \
+  -o /tmp/linux-crisis-tools.sh
 
-wget -O /tmp/linux-crisis-tools.sh \
-  "https://raw.githubusercontent.com/${GITHUB_USER}/${REPO}/main/linux-crisis-tools.sh"
-
-chmod 700 /tmp/linux-crisis-tools.sh
+chmod +x /tmp/linux-crisis-tools.sh
 sudo /tmp/linux-crisis-tools.sh
 ```
 
