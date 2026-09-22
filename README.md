@@ -1,10 +1,38 @@
 # Linux Crisis Tools
 
 A small, distro-aware installer for Linux troubleshooting tools that you want available **before** an incident happens.
-
 The goal is simple: when a VPS is slow, unreachable, dropping packets, exhausting memory, or suffering disk I/O problems, you should not first have to remember package names or build a debugging toolbox from scratch.
 
 Inspired by Brendan Gregg's article, [Linux Crisis Tools](https://www.brendangregg.com/blog/2024-03-24/linux-crisis-tools.html).
+
+When you have an outage caused by a performance issue, you don't want to lose precious time just to install the tools needed to diagnose it.
+
+Here is a list of **"crisis tools"** recommended for installation on Linux servers by default, if they aren't already available.
+
+The package names below are for Ubuntu.
+
+## Packages
+
+| Package                                          | Provides                                                                                                                                                                                                                                         | Notes                      |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
+| `procps`                                         | `ps(1)`, `vmstat(8)`, `uptime(1)`, `top(1)`                                                                                                                                                                                                      | Basic stats                |
+| `util-linux`                                     | `dmesg(1)`, `lsblk(1)`, `lscpu(1)`                                                                                                                                                                                                               | System log and device info |
+| `sysstat`                                        | `iostat(1)`, `mpstat(1)`, `pidstat(1)`, `sar(1)`                                                                                                                                                                                                 | Device and system stats    |
+| `iproute2`                                       | `ip(8)`, `ss(8)`, `nstat(8)`, `tc(8)`                                                                                                                                                                                                            | Preferred network tools    |
+| `numactl`                                        | `numastat(8)`                                                                                                                                                                                                                                    | NUMA stats                 |
+| `tcpdump`                                        | `tcpdump(8)`                                                                                                                                                                                                                                     | Network sniffer            |
+| `linux-tools-common` / `linux-tools-$(uname -r)` | `perf(1)`, `turbostat(8)`                                                                                                                                                                                                                        | Profiler and PMU stats     |
+| `bpfcc-tools` (`bcc`)                            | `opensnoop(8)`, `execsnoop(8)`, `runqlat(8)`, `softirqs(8)`, `hardirqs(8)`, `ext4slower(8)`, `ext4dist(8)`, `biotop(8)`, `biosnoop(8)`, `biolatency(8)`, `tcptop(8)`, `tcplife(8)`, `trace(8)`, `argdist(8)`, `funccount(8)`, `profile(8)`, etc. | Canned eBPF tools [1]      |
+| `bpftrace`                                       | `bpftrace`, basic versions of `opensnoop(8)`, `execsnoop(8)`, `runqlat(8)`, `biosnoop(8)`, etc.                                                                                                                                                  | eBPF scripting [1]         |
+| `trace-cmd`                                      | `trace-cmd(1)`                                                                                                                                                                                                                                   | Ftrace CLI                 |
+| `nicstat`                                        | `nicstat(1)`                                                                                                                                                                                                                                     | Network device stats       |
+| `ethtool`                                        | `ethtool(8)`                                                                                                                                                                                                                                     | Network device info        |
+| `tiptop`                                         | `tiptop(1)`                                                                                                                                                                                                                                      | PMU/PMC top                |
+| `cpuid`                                          | `cpuid(1)`                                                                                                                                                                                                                                       | CPU details                |
+| `msr-tools`                                      | `rdmsr(8)`, `wrmsr(8)`                                                                                                                                                                                                                           | Low-level CPU inspection   |
+
+> This list is based on Table 4.1, "Linux Crisis Tools", in *Systems Performance 2nd Edition*.
+
 
 ## Why this exists
 
