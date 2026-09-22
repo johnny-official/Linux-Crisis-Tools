@@ -140,7 +140,7 @@ sudo ./linux-crisis-tools.sh --advanced
 The exact package name varies by distribution.
 
 ### Core toolbox
-<img width="2600" height="2407" alt="image" src="https://github.com/user-attachments/assets/dc8eea6e-e680-4b49-a327-ff8607e657c3" />
+<img width="2400" height="1764" alt="image" src="https://github.com/user-attachments/assets/d6834d40-f467-43a9-8136-5828d56ae9b5" />
 
 | Area | Typical commands |
 | --- | --- |
