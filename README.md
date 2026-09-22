@@ -51,22 +51,6 @@ Package availability differs between distro versions and enabled repositories. A
 Replace the values below with your GitHub username and repository name:
 
 ```bash
-GITHUB_USER="<YOUR_GITHUB_USERNAME>"
-REPO="<YOUR_REPOSITORY_NAME>"
-
-curl -fL --proto '=https' --tlsv1.2 \
-  "https://raw.githubusercontent.com/${GITHUB_USER}/${REPO}/main/linux-crisis-tools.sh" \
-  -o /tmp/linux-crisis-tools.sh
-
-chmod 700 /tmp/linux-crisis-tools.sh
-sudo /tmp/linux-crisis-tools.sh
-```
-
-### wget fallback
-
-If `curl` is not installed:
-
-```bash
 curl -fsSL \
   https://raw.githubusercontent.com/johnny-official/Linux-Crisis-Tools/refs/heads/main/linux-crisis-tools.sh \
   -o /tmp/linux-crisis-tools.sh
@@ -145,14 +129,6 @@ sudo ./linux-crisis-tools.sh --core
 sudo ./linux-crisis-tools.sh --advanced
 ```
 
-### Skip package metadata refresh
-
-Useful when repository metadata is already current or network access is limited:
-
-```bash
-sudo ./linux-crisis-tools.sh --no-refresh
-```
-
 ### Show version
 
 ```bash
@@ -164,6 +140,7 @@ sudo ./linux-crisis-tools.sh --no-refresh
 The exact package name varies by distribution.
 
 ### Core toolbox
+<img width="2600" height="2407" alt="image" src="https://github.com/user-attachments/assets/dc8eea6e-e680-4b49-a327-ff8607e657c3" />
 
 | Area | Typical commands |
 | --- | --- |
